@@ -5,9 +5,9 @@ var db = require("../models");
 module.exports = function(app) {
 
   // GET route for getting all of the posts
-  app.get("/api/posts", function(req, res) {
-    db.Product.findAll({}).then(function(dbPost) {
-      res.json(dbPost);
+  app.get("/api/products", function(req, res) {
+    db.Product.findAll({}).then(function(ans) {
+      res.json(ans);
     });
   });
 
