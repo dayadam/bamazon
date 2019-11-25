@@ -64,25 +64,15 @@ function getOneProduct(id) {
 } // send along buying quat? nah, for the update one?? make an if statement with andserof this one, if quant ok then execute put request otherwise display insuff qunt
 
 function clickPlaceOrder(populateFinished) {
-  //$(".place-order").on("click", function(event) {
-  //event.preventDefault();
-  /*     getOneProduct(
-        $(".card-body")
-        .attr("data-id", "1")
-      //$(this)
+  $(".place-order").on("click", function(event) {
+    event.preventDefault();
+    getOneProduct(
+      $(this)
         .parent()
         .parent()
         .data("product").id
-    ); */
-  /*     console.log($(".card-body")
-    .attr("data-id", "1")
-  //$(this)
-    .parent()
-    .parent()
-    .data("product").id); */
-  //});
-  //console.log($("div[data-id='3']").attr("data-test"));
-  //console.log($("div[data-id='10']").attr("data-test"));
+    );
+  });
 }
 
 function placeOrder(stockQuantity, orderQuantity) {}
