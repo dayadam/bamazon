@@ -12,8 +12,6 @@ function populateItemsOnPage(itemsJSONFromGetAllHTTP) {
     const departmentName = item.department_name;
     const price = item.price;
     const stockQuantity = item.stock_quantity;
-    const createdAt = item.createdAt;
-    const updatedAt = item.updatedAt;
     $(".items-row").prepend(`
     <div class="col-lg-4 col-md-6 mb-4">
     <div class="card h-100">
@@ -29,7 +27,7 @@ function populateItemsOnPage(itemsJSONFromGetAllHTTP) {
         </h4>
         <h5>$${price}.00</h5>
         <p class="card-text">${departmentName}</p>
-        <p class="card-text">Stock Quantity: ${stockQuantity}</p>
+        <p data-id="${id}" class="card-text">Stock Quantity: ${stockQuantity}</p>
         <form>
         <label for="order">Buy quantity:</label>
         <input type="number" id="order" min="1" max="500" />
@@ -47,19 +45,26 @@ function populateItemsOnPage(itemsJSONFromGetAllHTTP) {
   </div>
     `);
     $(`.card-body[data-id='${id}']`).data("product", item);
-    //.attr("data-test", `${stockQuantity}`);
-    //console.log($("div[data-id='3']").attr("data-test"));
-    //console.log($(`.card-body[data-id='${id}']`).data("product"));
   });
   //return "ready for next event";
 }
 
-// send along buying quat? nah, for the update one?? make an if statement with andserof this one, if quant ok then execute put request otherwise display insuff qunt
-
-function clickPlaceOrder(populateFinished) {
+function clickPlaceOrder() {
   $(document).on("click", ".place-order", function(event) {
-    // $(".place-order").on("click", function(event) {
     event.preventDefault();
+    const orderQuantity = parseInt(
+      $(this)
+        .prev()
+        .val()
+    );
+    const price = $(this)
+      .parent()
+      .parent()
+      .data("product").price;
+    const id = $(this)
+      .parent()
+      .prev()
+      .attr("data-id");
     const productInfo = $(this)
       .parent()
       .parent()
@@ -69,9 +74,7 @@ function clickPlaceOrder(populateFinished) {
       method: "PUT",
       data: {
         id: productInfo.id,
-        orderQuantity: $(this)
-          .prev()
-          .val()
+        orderQuantity: orderQuantity
       }
     }).then(function(response) {
       if (response == false) {
@@ -79,23 +82,17 @@ function clickPlaceOrder(populateFinished) {
         $("#match-name").text("Insufficient quantity!");
         $("#results-modal").modal("toggle");
       } else {
+        const orderCost = orderQuantity * price;
         $("#result-title").text("Order successful");
-        $("#match-name").text(response);
+        $("#match-name").text(`Your order total is $${orderCost}.00`);
+        $(`p[data-id=${id}]`).text(`Stock Quantity: ${response}`);
         $("#results-modal").modal("toggle");
       }
     });
   });
 }
 
-/* function checkAndPlaceOrder(stockQuantity, orderQuantity) {
-  if buying quant < sticj quant {place the order}
-
-  else {dont}
-} */
-
 $(document).ready(function() {
   getAllItems().then(populateItemsOnPage);
-  /*     .then(clickPlaceOrder)
-    .then(checkandplace); */
   clickPlaceOrder();
 });
