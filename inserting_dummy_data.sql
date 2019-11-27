@@ -10,7 +10,7 @@ INSERT INTO Products (product_name, department_name, price, stock_quantity, crea
 INSERT INTO Products (product_name, department_name, price, stock_quantity, createdAt, updatedAt) values ('Neon Pink Frisbee', 'Sports & Outdoors', 8, 45, NOW(), NOW());
 
 
-SELECT * FROM Products;
+SELECT * FROM Products WHERE id = 10;
 
 ALTER TABLE Products MODIFY COLUMN createdAt datetime DEFAULT null;
 ALTER TABLE Products MODIFY COLUMN updatedAt datetime DEFAULT null;

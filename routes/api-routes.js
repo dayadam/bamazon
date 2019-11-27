@@ -31,17 +31,35 @@ module.exports = function(app) {
       //console.log(ans);
       console.log(ans.dataValues.stock_quantity);
       stockQuantity = ans.dataValues.stock_quantity;
-      console.log(req.body);
+      /*       console.log(req.body);
       console.log(parseInt(req.body.orderQuantity));
       console.log(stockQuantity);
       console.log(parseInt(stockQuantity));
-      console.log(parseInt(req.body.orderQuantity) <= stockQuantity);
+      console.log(parseInt(req.body.orderQuantity) <= stockQuantity); */
+      let lastTime;
+
+      function getLocal() {
+        const utcTime = moment.utc();
+        //console.log(moment());
+        //console.log(utcTime)
+        console.log(utcTime.local().format());
+        const newTime = utcTime.local().format();
+        const nextTime = newTime.split("T");
+        console.log(nextTime);
+        nextTime[1] = nextTime[1].substring(0, 8);
+        console.log(nextTime);
+        lastTime = nextTime.join(" ");
+        console.log(lastTime);
+        //return lastTime;
+      }
+      getLocal();
+      console.log(lastTime);
 
       if (parseInt(req.body.orderQuantity) <= stockQuantity) {
         db.Product.update(
           {
             stock_quantity: stockQuantity - parseInt(req.body.orderQuantity),
-            updatedAt: moment().format() //"YYYY-MM-DD HH:mm:ss"
+            updatedAt: lastTime //moment(moment.utc()).utcOffset(-5) //moment.utc().utcOffset(-5).format() //"YYYY-MM-DD HH:mm:ss"
           },
           {
             where: {
