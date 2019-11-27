@@ -54,31 +54,38 @@ function populateItemsOnPage(itemsJSONFromGetAllHTTP) {
   //return "ready for next event";
 }
 
-//type="submit"
-
-function getOneProduct(id) {
-  $.ajax({
-    url: `/api/products/${id}`,
-    method: "GET"
-  }).then(ans => console.log(ans));
-} // send along buying quat? nah, for the update one?? make an if statement with andserof this one, if quant ok then execute put request otherwise display insuff qunt
+// send along buying quat? nah, for the update one?? make an if statement with andserof this one, if quant ok then execute put request otherwise display insuff qunt
 
 function clickPlaceOrder(populateFinished) {
-  $(".place-order").on("click", function(event) {
+  $(document).on("click", ".place-order", function(event) {
+    // $(".place-order").on("click", function(event) {
     event.preventDefault();
-    getOneProduct(
-      $(this)
-        .parent()
-        .parent()
-        .data("product").id
-    );
+    const productInfo = $(this)
+      .parent()
+      .parent()
+      .data("product");
+    $.ajax({
+      url: `/api/products`,
+      method: "PUT",
+      data: {
+        id: productInfo.id,
+        orderQuantity: $(this)
+          .prev()
+          .val()
+      }
+    }).then(ans => console.log(ans));
   });
 }
 
-function placeOrder(stockQuantity, orderQuantity) {}
+/* function checkAndPlaceOrder(stockQuantity, orderQuantity) {
+  if buying quant < sticj quant {place the order}
+
+  else {dont}
+} */
 
 $(document).ready(function() {
-  getAllItems()
-    .then(populateItemsOnPage)
-    .then(clickPlaceOrder);
+  getAllItems().then(populateItemsOnPage);
+  /*     .then(clickPlaceOrder)
+    .then(checkandplace); */
+  clickPlaceOrder();
 });
