@@ -73,7 +73,17 @@ function clickPlaceOrder(populateFinished) {
           .prev()
           .val()
       }
-    }).then(ans => console.log(ans));
+    }).then(function(response) {
+      if (response == false) {
+        $("#result-title").text("Order unsuccessful");
+        $("#match-name").text("Insufficient quantity!");
+        $("#results-modal").modal("toggle");
+      } else {
+        $("#result-title").text("Order successful");
+        $("#match-name").text(response);
+        $("#results-modal").modal("toggle");
+      }
+    });
   });
 }
 
