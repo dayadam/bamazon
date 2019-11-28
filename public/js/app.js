@@ -57,38 +57,45 @@ function clickPlaceOrder() {
         .prev()
         .val()
     );
-    const price = $(this)
-      .parent()
-      .parent()
-      .data("product").price;
-    const id = $(this)
-      .parent()
+    $(this)
       .prev()
-      .attr("data-id");
-    const productInfo = $(this)
-      .parent()
-      .parent()
-      .data("product");
-    $.ajax({
-      url: `/api/products`,
-      method: "PUT",
-      data: {
-        id: productInfo.id,
-        orderQuantity: orderQuantity
-      }
-    }).then(function(response) {
-      if (response == false) {
-        $("#result-title").text("Order unsuccessful");
-        $("#match-name").text("Insufficient quantity!");
-        $("#results-modal").modal("toggle");
-      } else {
-        const orderCost = orderQuantity * price;
-        $("#result-title").text("Order successful");
-        $("#match-name").text(`Your order total is $${orderCost}.00`);
-        $(`p[data-id=${id}]`).text(`Stock Quantity: ${response}`);
-        $("#results-modal").modal("toggle");
-      }
-    });
+      .val("");
+    if (orderQuantity > 0) {
+      const price = $(this)
+        .parent()
+        .parent()
+        .data("product").price;
+      const id = $(this)
+        .parent()
+        .prev()
+        .attr("data-id");
+      const productInfo = $(this)
+        .parent()
+        .parent()
+        .data("product");
+      $.ajax({
+        url: `/api/products`,
+        method: "PUT",
+        data: {
+          id: productInfo.id,
+          orderQuantity: orderQuantity
+        }
+      }).then(function(response) {
+        if (response == false) {
+          $("#result-title").text("Order unsuccessful");
+          $("#match-name").text("Insufficient quantity!");
+          $("#results-modal").modal("toggle");
+        } else {
+          const orderCost = orderQuantity * price;
+          $("#result-title").text("Order successful");
+          $("#match-name").text(`Your order total is $${orderCost}.00`);
+          $(`p[data-id=${id}]`).text(
+            `Stock Quantity: ${response.newStockQuantity}`
+          );
+          $("#results-modal").modal("toggle");
+        }
+      });
+    }
   });
 }
 

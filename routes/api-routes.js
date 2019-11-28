@@ -40,7 +40,10 @@ module.exports = function(app) {
             }
           }
         ).then(function(response) {
-          res.json(stockQuantity - orderQuantity);
+          res.json({
+            previousStockQuantity: stockQuantity,
+            newStockQuantity: stockQuantity - orderQuantity
+          });
         });
       } else {
         res.json(false);

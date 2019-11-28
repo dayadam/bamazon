@@ -8,6 +8,8 @@ CREATE TABLE Products (
 	department_name VARCHAR(50),
 	price INTEGER,
 	stock_quantity INTEGER,
+	createdAt DATETIME NOT NULL,
+	updatedAt DATETIME NOT NULL,
 	PRIMARY KEY (id)
 );
 
