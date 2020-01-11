@@ -1,7 +1,6 @@
 # bamazon
 
-This is a Node.js command line interface (CLI) app that allows users to search the APIs of SeatGeek, Spotify, and Open Movie Database (omdb) with the help of the packages of node-spotify-api and axios. Secret keys are stored outside of the source code with the help of the dotenv package. The package moment helped with formatting dates. This app was created to satisfy the requirements of Unit-09-nodejs of the Georgia Institute of Technology software development professional program in the Fall of 2019.
-
+This is a full stack application that allows users to update the inventory of items in a MySQL database. 
 ---
 
 ## Table of Contents
@@ -38,27 +37,9 @@ Node.js and moment, axios, node-spotify-api, and dotenv packages are required to
 
    * These keys can be stored in your .env and accessed by your keys.js file. 
 
-### SeatGeek API key
-
-* The SeatGeek API requires you sign up as a developer to generate the necessary credentials. You can follow these steps in order to generate a **client id** and **client secret**:
-
-* Step One: Visit <https://seatgeek.com/account/develop>
-
-* Step Two: Either login to your existing SeatGeek account or create a new one (a free account is fine) and log in.
-
-* Step Three: Once logged in, navigate to <https://seatgeek.com/account/develop> to register a new application to be used with the SeatGeek API. You can fill in whatever you'd like for these fields. When finished, click the "complete" button.
-
-* Step Four: On the next screen, scroll down to where you see your client id and client secret. Copy these values down somewhere, you'll need them to use the SeatGeek API.
-
-* These keys can be stored in your .env and accessed by your keys.js file. 
-
-### Open Movie Database API Key
-
-* Procure an omdb API key as well. 
-
 ### Clone
 
-- Clone this repo to your local machine using `https://github.com/dayadam/liri-app`
+- Clone this repo to your local machine using `https://github.com/dayadam/bamazon`
 
 ---
 
@@ -115,7 +96,7 @@ Pittsburgh, PA 15219
 
 ## Authors
 
-* **Adam Day** - *Initial work* - [Adam Day](https://github.com/dayadam)
+* **Adam Day** - [Adam Day](https://github.com/dayadam)
 
 ## Acknowledgments
 
