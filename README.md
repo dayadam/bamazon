@@ -11,7 +11,7 @@ This is a full stack application that allows users to update the inventory of it
 
 ## Organization of the Application
 
-The app mainly consists of three functions intended for the CLI arguments of `concert-this`, `spotify-this-song`, and `movie-this`. The `concert-this` function uses axios to connect to the SeatGeek API and log information for a given artist or band of their soonest upcoming event. The `spotify-this-song` function uses the node-spotify-api package to connect to the Spotify API and retrieve and log information about the searched song. The `movie-this` function uses axios to connect to the omdb API and retrieve and log information about the searched movie. The application checks to see if `do-what-it-says` is the first argument, in which case the application will read the random.txt file and execute the command (i.e., `spotify-this-song`) and search term located in that file. 
+The application uses Bootstrap for the user interface. When a user submits a purchase quantity of an item, an AJAX request is made to the server API which updated the MySQL database uses Sequelize as an ORM. Node and express comprise the backend. 
 
 ## Getting Started
 
@@ -21,7 +21,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Prerequisites
 
-Node.js and moment, axios, node-spotify-api, and dotenv packages are required to run this application. This application also requires API keys for Spotify, omdb, and SeatGeek.
+Node.js, MYSQL database and express and sequelize packages are required to run this application locally. 
 
 ### Spotify API key
 
@@ -55,7 +55,7 @@ $ npm install
 
 ### Example
 
-[Working Video](https://drive.google.com/file/d/1W_UpSN3yywK9IHTg6eHKV3P0Md6E58KK/view?usp=sharing)
+[Working Video](https://drive.google.com/file/d/1VRxdemi2_74LE0EvOPcz6I31zcqxG0VO/view?usp=sharing)
 
 Use node to execute the liri.js file. The first CLI argument will be the app function you want to execute. Available commands are:
 * `concert-this` (SeatGeek AP)
@@ -88,11 +88,10 @@ Pittsburgh, PA 15219
 * [Node.js](https://nodejs.org/en/) - Server runtime environment for JavaScript
 * [Express.js](https://www.npmjs.com/package/express) - Fast, unopinionated, minimalist web framework for node.
 * [Sequelize](https://www.npmjs.com/package/sequelize) - Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. 
-* [Node-Spotify-API](https://www.npmjs.com/package/node-spotify-api) - Package used to access Spotify API
-* [Axios](https://www.npmjs.com/package/axios) - Package used for server side http requests to APIs 
-* [Spotify API](https://developer.spotify.com/my-applications/#!/) - Search for songs and get back information about them
-* [OMDB API](http://www.omdbapi.com) - Search for movies and get back information about them
-* [SeatGeek API](http://platform.seatgeek.com/#events) - Search for events and get back information about them
+* [jQuery](https://jquery.com/) - Fast, small, and feature-rich JavaScript library
+* [Bootstrap](https://getbootstrap.com/) - CSS framework directed at responsive, mobile-first front-end web development
+* [MySQL](https://www.mysql.com/products/community/) - Open-source relational database 
+* template
 
 ## Authors
 
