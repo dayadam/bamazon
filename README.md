@@ -5,7 +5,6 @@ This is a full stack application that allows users to update the inventory of it
 
 ## Table of Contents
 
-- [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Built With](#built-with)
 
@@ -101,7 +100,7 @@ Node.js, MYSQL database, and express and sequelize packages are required to run 
 $ npm install
 ```
 
-### Example
+## Usage
 
 [Working Video](https://drive.google.com/file/d/1VRxdemi2_74LE0EvOPcz6I31zcqxG0VO/view?usp=sharing)
 
