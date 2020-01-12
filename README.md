@@ -5,7 +5,9 @@ This is a full stack application that allows users to update the inventory of it
 
 ## Table of Contents
 
+- [Getting Started](#Getting-Started)
 - [Installation](#installation)
+- [Usage](#Usage)
 - [Built With](#built-with)
 
 ## Organization of the Application
@@ -18,7 +20,7 @@ In order for this application to run on your local computer, you must have Node.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
-## Prerequisites
+### Prerequisites
 
 Node.js, MYSQL database, and express and sequelize packages are required to run this application locally.  
 
