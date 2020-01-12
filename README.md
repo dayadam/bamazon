@@ -21,7 +21,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Prerequisites
 
-Node.js, MYSQL database and express and sequelize packages are required to run this application locally. 
+Node.js, MYSQL database, and express and sequelize packages are required to run this application locally. 
 
 ### Spotify API key
 
@@ -153,7 +153,7 @@ Pittsburgh, PA 15219
 * [jQuery](https://jquery.com/) - Fast, small, and feature-rich JavaScript library
 * [Bootstrap](https://getbootstrap.com/) - CSS framework directed at responsive, mobile-first front-end web development
 * [MySQL](https://www.mysql.com/products/community/) - Open-source relational database 
-* template
+* [Blackrock Digital](https://github.com/BlackrockDigital/startbootstrap-shop-homepage) - Start Bootstrap - Shop Homepage
 
 ## Authors
 
