@@ -5,9 +5,9 @@ This is a full stack application that allows users to update the inventory of it
 
 ## Table of Contents
 
-- [Getting Started](#Getting-Started)
+- [Getting Started](#getting-started)
 - [Installation](#installation)
-- [Usage](#Usage)
+- [Usage](#usage)
 - [Built With](#built-with)
 
 ## Organization of the Application
@@ -106,31 +106,7 @@ $ npm install
 
 [Working Video](https://drive.google.com/file/d/1VRxdemi2_74LE0EvOPcz6I31zcqxG0VO/view?usp=sharing)
 
-Use node to execute the liri.js file. The first CLI argument will be the app function you want to execute. Available commands are:
-* `concert-this` (SeatGeek AP)
-* `spotify-this-song` (Spotify API)
-* `movie-this` (OMDB API)
-* `do-what-it-says` (This will execute whichever command and search argument is saved in the random.txt file)
-
-The second CLI argument will be the artist, song, or movie you are searching. 
-
-```shell
-$ node liri.js concert-this Elton John
-```
-
-For `concert-this`, liri will respond with:
-* Name of the venue
-* Venue location
-* Date of the Event
-
-Continuing the earlier example, this is the liri output: 
-
-```shell
-$ node liri.js concert-this Elton John
-PPG Paints Arena
-Pittsburgh, PA 15219
-11/13/2019
-```
+Users can enter the quantity they want to subtract from the database in each "Buy quantity:" input field. Clicking the "Place order" button will submit the order, subtract from the database, and update the new inventory quantity in the "Stock Quantity:" field. 
 
 ## Built With
 
@@ -149,3 +125,5 @@ Pittsburgh, PA 15219
 ## Acknowledgments
 
 * Thanks to all the open source contributors that helped with the building blocks of this project. 
+
+* Thanks Blackrock Digital for providing an user interface template. 
