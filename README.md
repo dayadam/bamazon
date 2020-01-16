@@ -22,7 +22,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Node.js, MYSQL database, and express and sequelize packages are required to run this application locally.  
+Node.js, MySQL database, and express and sequelize packages are required to run this application locally.  
 
 ### Clone
 
