@@ -26,7 +26,7 @@ Node.js, MySQL database, and express and sequelize packages are required to run 
 
 ### Clone
 
-- Clone this repo to your local machine using `https://github.com/dayadam/bamazon`
+- Clone this repo to your local machine using `https://github.com/dayadam/bamazon.git`
 
 ---
 
