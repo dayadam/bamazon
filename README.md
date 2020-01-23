@@ -16,7 +16,7 @@ The application uses Bootstrap for the user interface. When a user submits a pur
 
 ## Getting Started
 
-In order for this application to run on your local computer, you must have Node.js installed as well as the required node modules. 
+In order for this application to run on your local computer, you must have Node.js installed as well as the required node modules and a MySQL database and server. 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
